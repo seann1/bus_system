@@ -1,0 +1,11 @@
+<h1>Here are the current bus lines:</h1>
+
+<ul>
+
+  <% @lines.each do |line| %>
+    <li><%= link_to "#{line.name}", line_path(line) %></li>
+  <% end %>
+
+</ul>
+
+
