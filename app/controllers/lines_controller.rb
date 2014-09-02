@@ -34,7 +34,7 @@ class LinesController < ApplicationController
 
   def update
     @line = Line.find(params[:id])
-    if @line.update(params[:line])
+    if @line.update(user_params)
       flash[:notice] = "This line was successfully updated"
       redirect_to lines_path
     else
@@ -47,6 +47,11 @@ class LinesController < ApplicationController
     @line.destroy
     flash[:notice] = "This line has been deleted"
     redirect_to lines_path
+  end
+
+  private
+  def user_params
+    params.require(:line).permit(line_ids: [])
   end
 
 end

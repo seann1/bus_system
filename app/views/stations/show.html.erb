@@ -1,7 +1,7 @@
 <h1><%= @station.name %></h1>
 
 <ul>
-<% @lines.each do |i| %>
+<% @station.lines.each do |i| %>
   <li><%= i.name %></li>
   <% end %>
 </ul>

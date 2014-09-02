@@ -2,7 +2,7 @@
 
 <ul>
   <% @stops.each do |stop| %>
-    <li><%= link_to "#{stop.name}", stop_path(stop) %></li>
+    <li><%= link_to "#{stop.id}", stop_path(stop) %></li>
   <% end %>
 </ul>
 

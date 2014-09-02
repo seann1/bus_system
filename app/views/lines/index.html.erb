@@ -22,15 +22,7 @@
 </ul>
 
 
-<h1>Here are the current bus stops:</h1>
 
-<ul>
-
-  <% @stops.each do |stop| %>
-    <li><%= link_to "#{stop.name}", stop_path(stop) %></li>
-  <% end %>
-
-</ul>
 
 <p><%= link_to "New Line", new_line_path, :class => "btn btn-default" %></p>
 
@@ -38,7 +30,6 @@
 
 
 
-<p><%= link_to "New Stop", new_stop_path, :class => "btn btn-default" %></p>
 
 
 

@@ -33,12 +33,10 @@ class StationsController < ApplicationController
 
   def update
     @station = Station.find(params[:id])
-    if @station.update(params[:station])
+    @lines = @station.lines
+    @station.update(user_params)
       flash[:notice] = "This station has been updated"
       redirect_to stations_path
-    else
-      render 'edit'
-    end
   end
 
   def destroy
@@ -46,6 +44,11 @@ class StationsController < ApplicationController
     @station.destroy
     flash[:notice] = "This station has been deleted"
     redirect_to stations_path
+  end
+
+  private
+  def user_params
+    params.require(:station).permit(line_ids:[])
   end
 
 end
