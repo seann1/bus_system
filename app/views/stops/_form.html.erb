@@ -1,0 +1,10 @@
+<%= form_for(@stop) do |f| %>
+  <div class="form-group">
+    <%= f.collection_select :station_id, Station.all, :id, :name %>
+    <%= f.collection_select :line_id, Line.all, :id, :name %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+  </div>
+  <%= f.submit(:class => "btn btn-primary") %>
+<% end %>

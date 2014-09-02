@@ -1,0 +1,11 @@
+<h1>Here are the current stops:</h1>
+
+<ul>
+  <% @stops.each do |stop| %>
+    <li><%= link_to "#{stop.name}", stop_path(stop) %></li>
+  <% end %>
+</ul>
+
+<p><%= link_to "New Stop", new_stop_path, :class => "btn btn-default" %></p>
+
+<p><%= link_to "Home", lines_path, :class => "btn btn-default" %></p>

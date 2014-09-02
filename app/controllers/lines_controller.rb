@@ -2,6 +2,8 @@ class LinesController < ApplicationController
 
   def index
     @lines = Line.all
+    @stations = Station.all
+    @stops = Stop.all
     render 'index'
   end
 
